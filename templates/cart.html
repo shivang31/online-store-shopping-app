@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head> <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+
+  table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: black;
+  color: white;
+}
+</style>
+<body>{%for cart in cart%}
+
+<center>
+          <table id="t01">
+  <tr>
+    <th>NAME</th>
+    <th>PRICE</th> 
+    <th></th>
+  </tr>
+  <tr>
+    <td>{{cart.Name}}</td>
+    <td>{{cart.Price}}</td>
+    <td><img  src="http://127.0.0.1:5000/static/images/{{cart.Picture}}" style="width:70px;height:70px;" ></td>
+    <td><a href="/remove/{{cart.s_no}}"><button>Remove</button></a></td>
+  </tr>
+
+</table></center>
+</body>{%endfor%}
+</html>
